@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material';
-import PublishLyricsForm from './PublishLyricsForm';
 
 export default function WriteYourOwnLyrics({ message = "No lyrics found for this song." }) {
   return (
