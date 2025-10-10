@@ -12,18 +12,13 @@ export default function ShareLyrics({ targetRef, songName }) {
     try {
       const dataUrl = await toPng(targetRef.current, { cacheBust: true });
 
-      // Download image
+      // Create a temporary link to trigger the download
       const link = document.createElement('a');
       link.href = dataUrl;
       link.download = `${safeName}.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      // Try to open Instagram (mobile)
-      //setTimeout(() => {
-      //  window.location.href = 'instagram://camera';
-      //}, 1500);
     } catch (err) {
       console.error('Failed to share image:', err);
     }
@@ -41,7 +36,7 @@ export default function ShareLyrics({ targetRef, songName }) {
       >
         Download
       </Button>
-      <Typography variant="body2" mt={1} color="text.secondary">
+      <Typography variant="body2" mt={2} color="text.secondary">
         (Share feature to be implemented)
       </Typography>
     </Box>

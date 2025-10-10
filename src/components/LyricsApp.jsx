@@ -12,7 +12,7 @@ import Step3ImageGenerator from './Step3ImageGenerator.jsx';
 export default function LyricsApp() {
     const { getSongLyrics } = useFetcher();
 
-    //TO DO: When finishing the workflow, create a shared Context. Add loading state.
+    //TO DO: When finishing the workflow, create a shared Context or use Redux.
 
     const [step, setStep] = useState(1);
     const [lyrics, setLyrics] = useState(null);

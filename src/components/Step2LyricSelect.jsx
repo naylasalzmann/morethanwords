@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import GoBackAndForward from './GoBackAndForward.jsx';
 import LoadingIndicator from './LoadingIndicator.jsx';
 import WriteYourOwnLyrics from './WriteYourOwnLyrics.jsx';
+import { useTheme } from '@mui/material/styles';
 
 // This component will display the lyrics of the selected song and allow the user to select lines
 // It will also handle the logic for moving to the next step in the process
@@ -27,12 +28,13 @@ function Step2LyricSelect({
     loading
 }) {
 
+    const theme = useTheme();
+
     useEffect(() => {
         const fetchLyrics = async () => {
             if (!song || !song.artists?.length) return; // prevent refetch if lyrics already exist
             if (lyrics != null) return; // skips fetch only if lyrics is not null/undefined
 
-            console.log('Fetching lyrics for:', song.artists, song.name);
             setLoading(true);
 
             try {
@@ -72,14 +74,12 @@ function Step2LyricSelect({
         <Container maxWidth="sm" sx={{ py: 4 }}>
             <GoBackAndForward
                 goBack={onBack}
-                goNext={() => {
-                    onNext();
-                }}
+                goNext={() => { onNext(); }}
                 disableNext={selectedLines.length === 0}
             />
 
-            <Typography variant="h5" gutterBottom>
-                Select lines
+            <Typography variant="h5" gutterBottom sx={{ mb: 4, textAlign: 'center' }}>
+                Pick Your Lyrics:
             </Typography>
 
             <Box
@@ -92,7 +92,6 @@ function Step2LyricSelect({
             >
                 {lines.map((line, index) => {
                     const isSelected = selectedLines.some(item => item.index === index);
-                    console.log('Line:', line, 'isSelected:', isSelected);
                     return (
                         <Paper
                             key={index}
@@ -104,7 +103,7 @@ function Step2LyricSelect({
                                 width: '100%',
                                 maxWidth: 600,
                                 textAlign: 'center',
-                                backgroundColor: isSelected ? 'primary.light' : 'background.paper',
+                                backgroundColor: isSelected ? theme.palette.action.selected : 'background.paper',
                                 fontSize: '1.25rem',
                             }}
                         >

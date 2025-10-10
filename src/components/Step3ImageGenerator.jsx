@@ -26,8 +26,8 @@ export default function Step3ImageGenerator({ song, selectedLines, onBack }) {
                 <Typography variant="h5" gutterBottom>
                     Sounds good!
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
-                    Now you can share these lyrics
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    Now you can download and share this card.
                 </Typography>
 
                 <Box
