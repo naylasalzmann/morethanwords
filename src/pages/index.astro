@@ -1,5 +1,4 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,17 +11,50 @@ import Layout from "../layouts/Layout.astro";
 			<h1 class="text-3xl font-semibold text-gray-900 mb-4">
 				Hi, I'm Nayla Salzmann
 			</h1>
-			<p class="text-gray-700 mb-4">
-				I'm a full-stack developer with a frontend edge, 
-				focused on clean design, solid architecture, and meaningful user experiences.
+
+			<p class="text-gray-700 mb-6">
+				I’m a full-stack developer with a frontend focus, combining
+				thoughtful design and solid engineering to build clean,
+				performant, and user-friendly applications.
 			</p>
-			<p class="text-gray-700 mb-6">Here's one of my latest projects (still a work in progress):</p>
-			<a
-				href="/lyrics-app"
-				class="text-blue-600 hover:underline font-medium"
-			>
-				Lyrics App – built using React and Material UI
-			</a>
+
+			<div>
+				<h2 class="text-xl font-semibold text-gray-800 mb-4">
+					Projects
+				</h2>
+				<ul class="space-y-6">
+					<li>
+						<p class="text-gray-700 mb-1">
+							<span class="font-medium">Lyrics App</span> – built with
+							React and Material UI
+							<span class="block text-sm text-gray-500"
+								>* Work in progress</span
+							>
+						</p>
+						<a
+							href="/lyrics-app"
+							target="_blank"
+							class="text-blue-600 hover:underline font-medium"
+						>
+							View Project →
+						</a>
+					</li>
+					<li>
+						<p class="text-gray-700 mb-1">
+							<span class="font-medium"
+								>alquilerargentina.com</span
+							> – a rental platform serving travelers across Argentina
+						</p>
+						<a
+							href="https://www.alquilerargentina.com/"
+							target="_blank"
+							class="text-blue-600 hover:underline font-medium"
+						>
+							Visit Site →
+						</a>
+					</li>
+				</ul>
+			</div>
 
 			<div class="flex justify-center gap-6 mt-6">
 				<!-- GitHub -->
