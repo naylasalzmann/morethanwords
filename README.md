@@ -7,6 +7,7 @@ This is my personal portfolio and a space to experiment with web projects — bu
 - Astro
 - React (for dynamic components)
 - Tailwind CSS
+- Material UI
 
 ## 🚀 Getting Started
 
